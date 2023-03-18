@@ -8,13 +8,13 @@ public class MainController {
 
 	@RequestMapping("/")
 	public String home() {
-		System.out.println("This is Home Page");
+		System.out.println("This is my Home Page");
 		return "home";
 	}
-		
+
 	@RequestMapping("/contact")
 	public String contact() {
-		System.out.println("This is Contact page");
+		System.out.println("This is a Contact page");
 		return "contact";
 	}
 }

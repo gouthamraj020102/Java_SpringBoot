@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>This is contact page</h1>
+<h1>This is a contact page</h1>
 </body>
 </html>
