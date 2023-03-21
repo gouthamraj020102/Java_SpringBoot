@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Footer template</title>
+</head>
+<body>
+	<footer id="fragmentTag" th:fragment="footer1(title, subtitle)">
+        <div class="container">
+            <h1>Good Morning <span th:text="${title}"></span></h1>
+            <h2>Good AfterNoon <span th:text="${subtitle}"></span></h2>
+            <h1>Good Evening</h1>
+        </div>
+    </footer>
+</body>
+</html>
