@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Login Form</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body style = "background: #e2e2e2;">
+	
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-md-6 offset-md-3">
+				<form th:action="@{/process}" method="post" class="bg-white p-4" th:object="${loginData}">
+
+				<h1 class="text-center">Signup Here</h1>
+
+					<div class="mb-3">
+					  <label for="InputUserName" class="form-label">User Name</label>
+					  <input 
+					  type="text" 
+					  name="userName"
+					  class="form-control "
+					  th:value="${loginData.userName}" 
+					  th:classappend="${#fields.hasErrors('userName') ? 'is-invalid' : ''}"
+					  id="InputUserName" 
+					  aria-describedby="userNameHelp">
+					  
+					  <div th:each="e : ${#fields.errors('userName')}" th:text="${e}" id="userNameValidation" class="invalid-feedback"></div>
+					  
+					</div>
+
+					<div class="mb-3">
+					  <label for="InputEmail" class="form-label">User Email</label>
+					  <input 
+					  type="email" 
+					  name="email"
+					  class="form-control" 
+					  th:value="${loginData.email}"
+					  th:classappend="${#fields.hasErrors('email') ? 'is-invalid': ''}"
+					  id="InputEmail">
+					  
+					  <div th:each="e: ${#fields.errors('email')}" th:text="${e}" id="emailValidation" class="invalid-feedback"></div>
+					</div>
+
+					<div class="mb-3 form-check">
+					  <input 
+					  name = "agreed"
+					  type="checkbox" 
+					  class="form-check-input" 
+					  th:classappend = "${#fields.hasErrors('agreed') ? 'is-invalid': '' }"
+					  id="exampleCheck1">
+					  <label class="form-check-label" for="exampleCheck1">Agree terms and conditions</label>
+					  
+					  <div th:each="e: ${#fields.errors('agreed')}" th:text="${e}" class="invalid-feedback"></div>
+					</div>
+
+
+					<div class="container text-center">
+										<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+
+				  </form>
+			</div>
+		</div>
+	</div>	
+	
+</body>
+</html>
